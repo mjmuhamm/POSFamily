@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonthCollectionViewReusableCell" id="gTV-IL-0wX" customClass="MonthCollectionViewCell" customModule="POSFamily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNo-IF-taR">
+                        <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday September 1, 2023" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pm4-A3-BsJ">
+                                <rect key="frame" x="10" y="41" width="116" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to View" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-qF-MiP">
+                                <rect key="frame" x="5" y="103" width="126" height="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" systemColor="systemGray5Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-1U-dy6">
+                                <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="clickToViewButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Iqx-Td-2lB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Wv-qF-MiP" firstAttribute="top" secondItem="pm4-A3-BsJ" secondAttribute="bottom" constant="8" symbolic="YES" id="2wN-Ci-ThC"/>
+                            <constraint firstItem="pm4-A3-BsJ" firstAttribute="centerX" secondItem="MNo-IF-taR" secondAttribute="centerX" id="37w-wa-eKH"/>
+                            <constraint firstItem="aKx-1U-dy6" firstAttribute="top" secondItem="MNo-IF-taR" secondAttribute="top" id="4ec-E8-2Tc"/>
+                            <constraint firstItem="pm4-A3-BsJ" firstAttribute="leading" secondItem="MNo-IF-taR" secondAttribute="leading" constant="10" id="GQ2-oP-tNu"/>
+                            <constraint firstItem="7Wv-qF-MiP" firstAttribute="leading" secondItem="MNo-IF-taR" secondAttribute="leading" constant="5" id="IxC-xy-lBs"/>
+                            <constraint firstAttribute="height" constant="136" id="JKq-hG-frE"/>
+                            <constraint firstAttribute="bottom" secondItem="aKx-1U-dy6" secondAttribute="bottom" id="Jch-z3-WXu"/>
+                            <constraint firstItem="aKx-1U-dy6" firstAttribute="leading" secondItem="MNo-IF-taR" secondAttribute="leading" id="LIQ-rC-FZb"/>
+                            <constraint firstAttribute="trailing" secondItem="aKx-1U-dy6" secondAttribute="trailing" id="Lsn-Tf-PXW"/>
+                            <constraint firstItem="pm4-A3-BsJ" firstAttribute="centerY" secondItem="MNo-IF-taR" secondAttribute="centerY" id="cVE-SR-ngE"/>
+                            <constraint firstAttribute="trailing" secondItem="pm4-A3-BsJ" secondAttribute="trailing" constant="10" id="gkA-WC-qvK"/>
+                            <constraint firstAttribute="trailing" secondItem="7Wv-qF-MiP" secondAttribute="trailing" constant="5" id="mH2-Lb-wKq"/>
+                            <constraint firstAttribute="width" constant="136" id="olp-LG-qUP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MNo-IF-taR" secondAttribute="trailing" id="BuP-h6-Xpc"/>
+                <constraint firstAttribute="bottom" secondItem="MNo-IF-taR" secondAttribute="bottom" id="NpS-6a-ZAJ"/>
+                <constraint firstItem="MNo-IF-taR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Yi3-dx-vJT"/>
+                <constraint firstItem="MNo-IF-taR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sxn-rF-nNL"/>
+            </constraints>
+            <size key="customSize" width="136" height="136"/>
+            <connections>
+                <outlet property="clickToView" destination="aKx-1U-dy6" id="8Ws-HQ-U3v"/>
+                <outlet property="date" destination="pm4-A3-BsJ" id="zkj-zG-EKb"/>
+            </connections>
+            <point key="canvasLocation" x="204.58015267175571" y="49.295774647887328"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
