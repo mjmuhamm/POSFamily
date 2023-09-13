@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_Theming
 import MaterialComponents.MaterialTextControls_FilledTextAreasTheming
@@ -15,9 +18,12 @@ import MaterialComponents.MaterialTextControls_OutlinedTextFieldsTheming
 
 class PersonalViewController: UIViewController {
 
+    private var db = Firestore.firestore()
+    
+    
     @IBOutlet var fullName: UITextField!
-    @IBOutlet var username: UITextField!
     @IBOutlet var email: UITextField!
+    @IBOutlet var studentIdentificationNumber: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var confirmPassword: UITextField!
     
@@ -48,6 +54,7 @@ class PersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         
     }
     
@@ -153,6 +160,79 @@ class PersonalViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         
+        if fullName.text == "" {
+            self.showToast(message: "Please enter your full name.", font: .systemFont(ofSize: 12))
+        } else if email.text == "" || !isValidEmail(email.text!) {
+            self.showToast(message: "Please enter a valid email.", font: .systemFont(ofSize: 12))
+        } else if studentIdentificationNumber.text == "" {
+            self.showToast(message: "Please enter your student identification number.", font: .systemFont(ofSize: 12))
+        } else if password.text == "" || !isPasswordValid(password: password.text!) {
+            self.showToast(message: "Please enter a password that includes 1 upper case character, 1 special character, 1 number, 1 lowercase letter, and is at least 8 characters long.", font: .systemFont(ofSize: 12))
+        } else if password.text != confirmPassword.text {
+            self.showToast(message: "Please make sure your passwords match.", font: .systemFont(ofSize: 12))
+        } else {
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
+                if error == nil {
+                    if result != nil {
+                        let x = result!.user.uid
+                        
+                        let data : [String: Any] = ["fullName" : self.fullName.text!, "studentIdentificationNumber" : self.studentIdentificationNumber.text!, "burger" : self.burger, "creative": self.creative, "lowCal": self.lowCal, "lowCarb": self.lowCarb, "pasta": self.pasta, "healthy" : self.healthy, "vegan" : self.vegan, "seafood": self.seafood, "workout" : self.workout]
+                        
+                        self.db.collection("Students").document(x).collection("Personal").document(x).setData(data)
+                       
+                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentTab") as? UITabBarController  {
+                            self.present(vc, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func showToast(message : String, font: UIFont) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: 0, y: self.view.frame.size.height-180, width: (self.view.frame.width), height: 70))
+        toastLabel.backgroundColor = UIColor.lightGray
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.numberOfLines = 4
+        toastLabel.layer.cornerRadius = 1;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+
+        
+    }
+    
+    func isPasswordValid(password: String) -> Bool {
+        let passRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passRegEx)
+        print("password \(passwordTest.evaluate(with: password))")
+        return passwordTest.evaluate(with: password)
+    }
+   
+    
+    func searchForSpecialChar(search: String) -> Bool {
+        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+        if search.rangeOfCharacter(from: characterset.inverted) != nil {
+            print("string contains special characters")
+            return true
+        }
+        return false
     }
     
 }

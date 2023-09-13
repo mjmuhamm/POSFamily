@@ -74,6 +74,9 @@ class ParentLoginViewController: UIViewController {
     }
     
     @IBAction func newParentSignUpButtonPressed(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ParentPersonal") as? ParentPersonalViewController  {
+            self.present(vc, animated: true, completion: nil)
+        }
         
     }
 }

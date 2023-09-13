@@ -16,6 +16,7 @@ class MenuViewController: UIViewController {
     
     @IBOutlet var monthCollectionView: UICollectionView!
     
+    @IBOutlet var date: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +36,7 @@ class MenuViewController: UIViewController {
         
         todayMenuView.isHidden = false
         monthCollectionView.isHidden = true
+        date.text = "September 01, 2023"
         
     }
     
@@ -44,6 +46,8 @@ class MenuViewController: UIViewController {
         
         todayMenuView.isHidden = true
         monthCollectionView.isHidden = false
+        
+        date.text = "September"
     }
     
 }
@@ -65,30 +69,20 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.date.text = "September \(x), 2023"
         
         cell.clickToViewButtonTapped = {
-            print("clicked \(cell.date.text)")
+            
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuDetail") as? MenuDetailViewController  {
+                vc.dateText = cell.date.text!
+                self.present(vc, animated: true, completion: nil)
+            }
         }
         
-//        if toggle == "main" {
-//            cell.image.image = UIImage(named: "pic1")
-//        } else {
-//            cell.image.image = UIImage(named: "pic2")
-//        }
-//        cell.checkMark.isHidden = true
-//
-//        cell.imageButtonTapped = {
-//            if cell.checkMark.isHidden == true {
-//                cell.checkMark.isHidden = false
-//            } else {
-//                cell.checkMark.isHidden = true
-//            }
-//        }
         
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (monthCollectionView.frame.size.width / 3) - 3, height: (monthCollectionView.frame.size.height / 3) - 3)
+        return CGSize(width: (monthCollectionView.frame.size.width / 4) - 4, height: (monthCollectionView.frame.size.height / 4) - 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

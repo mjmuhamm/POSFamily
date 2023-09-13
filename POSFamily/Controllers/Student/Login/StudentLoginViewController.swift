@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_Theming
 import MaterialComponents.MaterialTextControls_FilledTextAreasTheming
@@ -70,6 +71,22 @@ class StudentLoginViewController: UIViewController {
     
     
     @IBAction func loginButtonPressed(_ sender: Any) {
+        if email.text == "" {
+            self.showToast(message: "Please enter your email address.", font: .systemFont(ofSize: 12))
+        } else if password.text == "" {
+            self.showToast(message: "Please enter your password.", font: .systemFont(ofSize: 12))
+        } else {
+            Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!) { result, error in
+                if error == nil {
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentTab") as? UITabBarController  {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                } else {
+                    self.showToast(message: "There was an error. Please make sure your email and password is correct and try again.", font: .systemFont(ofSize: 12))
+                }
+            }
+            
+        }
         
     }
     
@@ -79,5 +96,24 @@ class StudentLoginViewController: UIViewController {
         }
     }
     
+    func showToast(message : String, font: UIFont) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: 0, y: self.view.frame.size.height-180, width: (self.view.frame.width), height: 70))
+        toastLabel.backgroundColor = UIColor.lightGray
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.numberOfLines = 4
+        toastLabel.layer.cornerRadius = 1;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
     
 }
