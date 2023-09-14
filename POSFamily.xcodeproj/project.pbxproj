@@ -31,6 +31,11 @@
 		F4AB486D2AAFA610007C484B /* POSFamilyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB486C2AAFA610007C484B /* POSFamilyUITestsLaunchTests.swift */; };
 		F4AB48832AAFAB7D007C484B /* StudentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB48822AAFAB7D007C484B /* StudentLoginViewController.swift */; };
 		F4AB48852AAFAB8C007C484B /* ParentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB48842AAFAB8C007C484B /* ParentLoginViewController.swift */; };
+		F4F985392AB345CB00D65831 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F985382AB345CB00D65831 /* AccountSettingsViewController.swift */; };
+		F4F9853C2AB3460000D65831 /* StudentSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9853B2AB3460000D65831 /* StudentSettingsViewController.swift */; };
+		F4F9853F2AB388F600D65831 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9853E2AB388F600D65831 /* NotificationsViewController.swift */; };
+		F4F985432AB3898900D65831 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F985412AB3898900D65831 /* NotificationsTableViewCell.swift */; };
+		F4F985442AB3898A00D65831 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F985422AB3898900D65831 /* NotificationsTableViewCell.xib */; };
 		F4FC955F2AB08920005B7C72 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC955E2AB08920005B7C72 /* MenuViewController.swift */; };
 		F4FC95612AB08928005B7C72 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC95602AB08928005B7C72 /* DealsViewController.swift */; };
 		F4FC95632AB0892F005B7C72 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC95622AB0892F005B7C72 /* OrdersViewController.swift */; };
@@ -86,6 +91,11 @@
 		F4AB486C2AAFA610007C484B /* POSFamilyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSFamilyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F4AB48822AAFAB7D007C484B /* StudentLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLoginViewController.swift; sourceTree = "<group>"; };
 		F4AB48842AAFAB8C007C484B /* ParentLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentLoginViewController.swift; sourceTree = "<group>"; };
+		F4F985382AB345CB00D65831 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		F4F9853B2AB3460000D65831 /* StudentSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSettingsViewController.swift; sourceTree = "<group>"; };
+		F4F9853E2AB388F600D65831 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		F4F985412AB3898900D65831 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		F4F985422AB3898900D65831 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
 		F4FC955E2AB08920005B7C72 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F4FC95602AB08928005B7C72 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		F4FC95622AB0892F005B7C72 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
@@ -269,10 +279,10 @@
 		F4AB48792AAFA630007C484B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4AB48492AAFA60E007C484B /* AppDelegate.swift */,
 				F4AB48522AAFA610007C484B /* Assets.xcassets */,
 				F4AB48542AAFA610007C484B /* LaunchScreen.storyboard */,
 				F4AB484B2AAFA60E007C484B /* SceneDelegate.swift */,
-				F4AB48492AAFA60E007C484B /* AppDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -280,8 +290,8 @@
 		F4AB487A2AAFA649007C484B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F4FC95662AB0893B005B7C72 /* Both */,
 				F4AB484D2AAFA60E007C484B /* StartViewController.swift */,
+				F4FC95662AB0893B005B7C72 /* Both */,
 				F4AB487D2AAFA980007C484B /* Parent */,
 				F4AB487C2AAFA97B007C484B /* Student */,
 			);
@@ -294,6 +304,7 @@
 				F4122B4E2AB2474200CDA4E6 /* Family */,
 				F47C82D92AB1321600115C4D /* Orders */,
 				F47C82D82AB1320C00115C4D /* Home */,
+				F4F985402AB3896C00D65831 /* Notifications */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -304,6 +315,7 @@
 				F4122B4B2AB2403200CDA4E6 /* Login */,
 				F4122B442AB2270C00CDA4E6 /* SignUp */,
 				F4FC955D2AB08917005B7C72 /* Tabs */,
+				F4F9853A2AB345F400D65831 /* Settings */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -314,8 +326,42 @@
 				F4122B4A2AB2402600CDA4E6 /* Login */,
 				F4122B472AB2319700CDA4E6 /* SignUp */,
 				F4FC95672AB08948005B7C72 /* Tabs */,
+				F4F985372AB345B700D65831 /* Settings */,
 			);
 			path = Parent;
+			sourceTree = "<group>";
+		};
+		F4F985372AB345B700D65831 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F4F985382AB345CB00D65831 /* AccountSettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F4F9853A2AB345F400D65831 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9853B2AB3460000D65831 /* StudentSettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F4F9853D2AB388E300D65831 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9853E2AB388F600D65831 /* NotificationsViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F4F985402AB3896C00D65831 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F4F985412AB3898900D65831 /* NotificationsTableViewCell.swift */,
+				F4F985422AB3898900D65831 /* NotificationsTableViewCell.xib */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		F4FC955D2AB08917005B7C72 /* Tabs */ = {
@@ -330,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FC956A2AB0896C005B7C72 /* Tabs */,
+				F4F9853D2AB388E300D65831 /* Other */,
 			);
 			path = Both;
 			sourceTree = "<group>";
@@ -462,6 +509,7 @@
 				F4AB48562AAFA610007C484B /* LaunchScreen.storyboard in Resources */,
 				F4A3D5262AB0F3880049C39A /* MonthCollectionViewCell.xib in Resources */,
 				F4AB48532AAFA610007C484B /* Assets.xcassets in Resources */,
+				F4F985442AB3898A00D65831 /* NotificationsTableViewCell.xib in Resources */,
 				F4AB48512AAFA60E007C484B /* Main.storyboard in Resources */,
 				F4122B522AB2475600CDA4E6 /* StudentTableViewCell.xib in Resources */,
 				F4122B542AB2662D00CDA4E6 /* GoogleService-Info.plist in Resources */,
@@ -535,12 +583,16 @@
 				F4A3D5252AB0F3880049C39A /* MonthCollectionViewCell.swift in Sources */,
 				F47C82DC2AB1323200115C4D /* OrdersTableViewCell.swift in Sources */,
 				F4FC95652AB08936005B7C72 /* MeViewController.swift in Sources */,
+				F4F985432AB3898900D65831 /* NotificationsTableViewCell.swift in Sources */,
 				F4FC95612AB08928005B7C72 /* DealsViewController.swift in Sources */,
+				F4F9853C2AB3460000D65831 /* StudentSettingsViewController.swift in Sources */,
 				F4AB48832AAFAB7D007C484B /* StudentLoginViewController.swift in Sources */,
 				F4122B462AB2272300CDA4E6 /* PersonalViewController.swift in Sources */,
 				F4FC955F2AB08920005B7C72 /* MenuViewController.swift in Sources */,
 				F4122B4D2AB2470200CDA4E6 /* StudentAddViewController.swift in Sources */,
+				F4F985392AB345CB00D65831 /* AccountSettingsViewController.swift in Sources */,
 				F4FC95692AB0895C005B7C72 /* FamilyViewController.swift in Sources */,
+				F4F9853F2AB388F600D65831 /* NotificationsViewController.swift in Sources */,
 				F4FC95632AB0892F005B7C72 /* OrdersViewController.swift in Sources */,
 				F4AB484E2AAFA60E007C484B /* StartViewController.swift in Sources */,
 				F4AB484A2AAFA60E007C484B /* AppDelegate.swift in Sources */,
