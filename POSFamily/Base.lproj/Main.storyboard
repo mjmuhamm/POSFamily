@@ -693,9 +693,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$25.55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKM-dx-9RW">
-                                        <rect key="frame" x="18" y="86" width="120" height="42"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKM-dx-9RW">
+                                        <rect key="frame" x="18" y="86" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -711,8 +711,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOg-l5-jId">
-                                        <rect key="frame" x="190" y="93" width="66" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOg-l5-jId">
+                                        <rect key="frame" x="190" y="93" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -885,29 +885,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Family" id="8n6-g4-lvE">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="kQ6-TQ-v7A">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="XVE-he-Wku">
-                                <rect key="frame" x="16" y="9" width="25" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="bell" catalog="system"/>
-                                <connections>
-                                    <action selector="backButton:" destination="sFA-RW-XV6" eventType="touchUpInside" id="LLb-BO-FS3"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" image="bell" catalog="system" id="JzW-Dt-cke">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="notificationButtonPressed:" destination="iOF-hm-MRd" id="nCr-L4-6tV"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="WRN-kY-CFO">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="oP7-sX-MkC">
-                                <rect key="frame" x="350" y="8.6666666666666643" width="27" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="gearshape" catalog="system"/>
-                                <connections>
-                                    <action selector="backButton:" destination="sFA-RW-XV6" eventType="touchUpInside" id="FrM-VD-Q49"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="P6U-zf-5rm">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="settingsButtonPressed:" destination="iOF-hm-MRd" id="z07-fj-8cg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1422,7 +1410,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*1 uppercase character, 1 special character, 1 number, 1 lowercase letter, 8 characters*" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im9-Kr-OLM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*1 uppercase character, 1 special character, 1 number, 1 lowercase letter, and at least 8 characters*" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im9-Kr-OLM">
                                                 <rect key="frame" x="220.66666666666663" y="274.33333333333331" width="157.33333333333337" height="52.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1602,10 +1590,10 @@
             </objects>
             <point key="canvasLocation" x="1494" y="-439"/>
         </scene>
-        <!--Account Settings Chef View Controller-->
+        <!--Account Settings View Controller-->
         <scene sceneID="lCR-x4-2Yh">
             <objects>
-                <viewController id="sFA-RW-XV6" customClass="AccountSettingsChefViewController" customModule="POSFamily" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FamilySettings" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="sFA-RW-XV6" customClass="AccountSettingsViewController" customModule="POSFamily" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T88-3V-t3f">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1630,7 +1618,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="chevron.left" catalog="system"/>
                                 <connections>
-                                    <action selector="backButton:" destination="sFA-RW-XV6" eventType="touchUpInside" id="pJT-x9-z9T"/>
+                                    <action selector="backButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="RDG-Wb-FxU"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01d-un-GsC">
@@ -1652,7 +1640,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Delete Account"/>
                                                 <connections>
-                                                    <action selector="deleteAccountButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="ofF-6U-NOW"/>
+                                                    <action selector="deleteAccountButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="OtL-or-mhc"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMs-9R-TLP">
@@ -1673,7 +1661,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Logout"/>
                                                 <connections>
-                                                    <action selector="logoutButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="Pxk-zS-99I"/>
+                                                    <action selector="logoutButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="jAX-oG-Y4k"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-BD-gWb">
@@ -1684,9 +1672,6 @@
                                                 <state key="normal" title=" Service Agreement" image="square.and.pencil" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="regulationAgreementPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="mNn-hv-NrU"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pes-6T-NNp">
                                                 <rect key="frame" x="20" y="67" width="78" height="25.666666666666671"/>
@@ -1697,7 +1682,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="personalButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="NMS-Kd-uel"/>
+                                                    <action selector="profileButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="iOy-PU-jLj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSp-72-XZB">
@@ -1708,9 +1693,6 @@
                                                 <state key="normal" title=" Report An Issue" image="square.and.pencil" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="reportAnIssueButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="b36-2J-Qri"/>
-                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bes-F7-Ytt">
                                                 <rect key="frame" x="31" y="48" width="313" height="0.3333333333333357"/>
@@ -1727,9 +1709,6 @@
                                                 <state key="normal" title=" Terms of Service" image="square.and.pencil" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="termsOfServiceButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="hMx-HZ-Tg3"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqr-hb-WdW">
                                                 <rect key="frame" x="20" y="206.33333333333331" width="132" height="25.333333333333343"/>
@@ -1739,9 +1718,6 @@
                                                 <state key="normal" title=" Privacy Policy" image="square.and.pencil" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="dataPrivacyButtonPressed:" destination="sFA-RW-XV6" eventType="touchUpInside" id="D3X-tQ-etj"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdl-k0-HEF">
                                                 <rect key="frame" x="20" y="165.33333333333331" width="186" height="26"/>
@@ -1751,9 +1727,6 @@
                                                 <state key="normal" title=" POSFamily: Overview" image="square.and.pencil" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="guideToPosting:" destination="sFA-RW-XV6" eventType="touchUpInside" id="Cbw-LG-hym"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1818,8 +1791,8 @@
                     <navigationItem key="navigationItem" id="NTj-0P-5d8"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="deleteAccountButton" destination="Std-lh-m5y" id="F8f-pT-npm"/>
-                        <outlet property="logoutButton" destination="bPa-it-vLl" id="cvH-O3-Ka5"/>
+                        <outlet property="deleteAccount" destination="Std-lh-m5y" id="VSi-zg-zsa"/>
+                        <outlet property="logout" destination="bPa-it-vLl" id="p98-8v-9XL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRM-Bs-jLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2100,7 +2073,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*1 uppercase character, 1 special character, 1 number, 1 lowercase letter, 8 characters*" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQP-f6-hpw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*1 uppercase character, 1 special character, 1 number, 1 lowercase letter, and at least 8 characters*" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQP-f6-hpw">
                                                 <rect key="frame" x="220.66666666666663" y="208.66666666666669" width="157.33333333333337" height="52.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2318,6 +2291,11 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bcP-6y-uqD">
+                                                <rect key="frame" x="186.66666666666666" y="265.66666666666669" width="20" height="20"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2340,6 +2318,7 @@
                                             <constraint firstItem="qib-K9-W7F" firstAttribute="leading" secondItem="p87-Sa-V8g" secondAttribute="leading" constant="23" id="Vmr-Dp-chR"/>
                                             <constraint firstAttribute="trailing" secondItem="oQP-f6-hpw" secondAttribute="trailing" constant="15" id="Ziy-oX-HAI"/>
                                             <constraint firstItem="NqW-h7-jdT" firstAttribute="top" secondItem="3xE-LR-GcW" secondAttribute="bottom" constant="10" id="cmI-kw-SVE"/>
+                                            <constraint firstItem="bcP-6y-uqD" firstAttribute="centerY" secondItem="p87-Sa-V8g" secondAttribute="centerY" constant="-81.833333333333314" id="cys-RX-Q7b"/>
                                             <constraint firstItem="RKd-it-0sU" firstAttribute="leading" secondItem="0KD-7b-Dr8" secondAttribute="trailing" constant="21" id="fr2-Oc-hvG"/>
                                             <constraint firstItem="3xE-LR-GcW" firstAttribute="leading" secondItem="p87-Sa-V8g" secondAttribute="leading" constant="23" id="gPu-xd-OII"/>
                                             <constraint firstAttribute="height" constant="715" id="gSX-Cm-nDG"/>
@@ -2349,6 +2328,7 @@
                                             <constraint firstItem="xzR-12-7H5" firstAttribute="top" secondItem="qib-K9-W7F" secondAttribute="bottom" constant="17.329999999999998" id="loe-gY-rfr"/>
                                             <constraint firstItem="CgB-NX-Xtj" firstAttribute="top" secondItem="xzR-12-7H5" secondAttribute="bottom" constant="10.666666666666686" id="mSv-JN-4C0"/>
                                             <constraint firstItem="iMc-f8-8T9" firstAttribute="top" secondItem="CgB-NX-Xtj" secondAttribute="bottom" constant="17.329999999999998" id="myK-Ir-Dz8"/>
+                                            <constraint firstItem="bcP-6y-uqD" firstAttribute="centerX" secondItem="p87-Sa-V8g" secondAttribute="centerX" id="ocY-zI-wWS"/>
                                             <constraint firstItem="CgB-NX-Xtj" firstAttribute="top" secondItem="xzR-12-7H5" secondAttribute="bottom" constant="10.666666666666686" id="vlp-cM-hVH"/>
                                             <constraint firstItem="V38-TF-Wli" firstAttribute="leading" secondItem="p87-Sa-V8g" secondAttribute="leading" constant="23" id="whv-dn-DHt"/>
                                             <constraint firstItem="CgB-NX-Xtj" firstAttribute="leading" secondItem="p87-Sa-V8g" secondAttribute="leading" constant="23" id="xHG-aO-OR5"/>
@@ -2411,6 +2391,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="bcP-6y-uqD" id="a3Z-aX-kqO"/>
                         <outlet property="confirmPassword" destination="uXc-yc-Z7u" id="kZz-t3-Nyc"/>
                         <outlet property="email" destination="CgB-NX-Xtj" id="fLb-VR-sEE"/>
                         <outlet property="fullName" destination="Jou-h0-sTl" id="GrH-dZ-1A9"/>
@@ -2483,7 +2464,7 @@
                                 <rect key="frame" x="16" y="117" width="361" height="367"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec0-k8-fIa">
-                                        <rect key="frame" x="13" y="11" width="111" height="20"/>
+                                        <rect key="frame" x="8" y="11" width="111" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2501,18 +2482,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwf-li-nlf">
-                                        <rect key="frame" x="13" y="39" width="180" height="34"/>
+                                        <rect key="frame" x="8" y="39" width="185" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="dVF-JG-RTu"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185" id="t8j-6V-UPr"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPd-ih-quM">
-                                        <rect key="frame" x="13" y="82" width="180" height="34"/>
+                                        <rect key="frame" x="8" y="82" width="185" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="06r-Lj-I5x"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185" id="YoO-CF-8Zz"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -2552,20 +2533,25 @@
                                             <action selector="saveButtonPressed:" destination="VnO-hU-qPg" eventType="touchUpInside" id="KVl-pv-1oP"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pjS-kS-8S2">
+                                        <rect key="frame" x="148" y="122" width="20" height="20"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="idC-sR-iLJ" firstAttribute="top" secondItem="a08-Vf-zMJ" secondAttribute="bottom" constant="17" id="1Df-i0-vNS"/>
                                     <constraint firstItem="i4M-jy-C2y" firstAttribute="top" secondItem="Abe-Zf-l5v" secondAttribute="bottom" constant="37" id="2pn-mo-RR5"/>
-                                    <constraint firstItem="vwf-li-nlf" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="13" id="7hA-xx-TZT"/>
+                                    <constraint firstItem="vwf-li-nlf" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="8" id="7hA-xx-TZT"/>
                                     <constraint firstItem="Abe-Zf-l5v" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="8" id="AAJ-fy-S3F"/>
+                                    <constraint firstItem="pjS-kS-8S2" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="148" id="B4C-tz-T6z"/>
                                     <constraint firstItem="Abe-Zf-l5v" firstAttribute="top" secondItem="idC-sR-iLJ" secondAttribute="bottom" constant="7" id="Bbh-zS-QBU"/>
                                     <constraint firstItem="OIq-LR-YV4" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="8" id="Dzv-Kn-l01"/>
                                     <constraint firstAttribute="height" constant="367" id="Jp5-PA-lfH"/>
                                     <constraint firstItem="Ec0-k8-fIa" firstAttribute="top" secondItem="WBO-aX-FV1" secondAttribute="top" constant="11" id="K7Y-d2-0ZX"/>
                                     <constraint firstItem="OIq-LR-YV4" firstAttribute="top" secondItem="FPd-ih-quM" secondAttribute="bottom" constant="17" id="KHO-4j-Eqa"/>
-                                    <constraint firstItem="Ec0-k8-fIa" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="13" id="Ld6-4B-vX9"/>
-                                    <constraint firstItem="FPd-ih-quM" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="13" id="Mnz-nq-RwU"/>
+                                    <constraint firstItem="Ec0-k8-fIa" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="8" id="Ld6-4B-vX9"/>
+                                    <constraint firstItem="FPd-ih-quM" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="8" id="Mnz-nq-RwU"/>
                                     <constraint firstItem="FPd-ih-quM" firstAttribute="top" secondItem="vwf-li-nlf" secondAttribute="bottom" constant="9" id="OoA-gU-Shw"/>
                                     <constraint firstItem="vwf-li-nlf" firstAttribute="top" secondItem="Ec0-k8-fIa" secondAttribute="bottom" constant="8" symbolic="YES" id="PQJ-EM-Ab9"/>
                                     <constraint firstAttribute="width" constant="361" id="YKh-cH-wWR"/>
@@ -2573,6 +2559,7 @@
                                     <constraint firstItem="i4M-jy-C2y" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="122" id="iwM-nw-VJ2"/>
                                     <constraint firstItem="a08-Vf-zMJ" firstAttribute="top" secondItem="OIq-LR-YV4" secondAttribute="bottom" constant="8" symbolic="YES" id="myr-6o-7r3"/>
                                     <constraint firstItem="a08-Vf-zMJ" firstAttribute="leading" secondItem="WBO-aX-FV1" secondAttribute="leading" constant="8" id="o5e-X0-GmS"/>
+                                    <constraint firstItem="pjS-kS-8S2" firstAttribute="top" secondItem="FPd-ih-quM" secondAttribute="bottom" constant="8" symbolic="YES" id="qbm-2j-XvS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2593,6 +2580,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="pjS-kS-8S2" id="Kld-zr-xU4"/>
                         <outlet property="firstName" destination="vwf-li-nlf" id="Tfx-eC-KMp"/>
                         <outlet property="last4OfSSN" destination="Abe-Zf-l5v" id="lfH-52-9ch"/>
                         <outlet property="lastName" destination="FPd-ih-quM" id="n7i-1U-1L1"/>

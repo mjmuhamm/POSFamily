@@ -50,6 +50,10 @@ class StartViewController: UIViewController {
                         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentTab") as? UITabBarController  {
                             self.present(vc, animated: true, completion: nil)
                         }
+                    } else if Auth.auth().currentUser!.displayName! == "Parent" {
+                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ParentTab") as? UITabBarController  {
+                            self.present(vc, animated: true, completion: nil)
+                        }
                     }
                 }
             } else {

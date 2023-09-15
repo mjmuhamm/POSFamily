@@ -284,6 +284,8 @@ class PersonalViewController: UIViewController {
                         
                         let data : [String: Any] = ["fullName" : self.fullName.text!, "studentIdentificationNumber" : self.studentIdentificationNumber.text!, "burger" : self.burger, "creative": self.creative, "lowCal": self.lowCal, "lowCarb": self.lowCarb, "pasta": self.pasta, "healthy" : self.healthy, "vegan" : self.vegan, "seafood": self.seafood, "workout" : self.workout]
                         
+                        let data1 : [String: Any] = ["remainingBalance" : "0.00", "totalSpent" : "0.00"]
+                        
                         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                         changeRequest?.displayName = "Student"
                         changeRequest?.commitChanges { error in
@@ -291,6 +293,7 @@ class PersonalViewController: UIViewController {
                         }
                         
                         self.db.collection("Gary Community School Corporation").document("Students").collection("Students").document(x).collection("Personal").document(x).setData(data)
+                        self.db.collection("Gary Community School Corporation").document("Students").collection("Students").document(x).collection("Banking").document(x).setData(data1)
                         
                         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentTab") as? UITabBarController  {
                             self.present(vc, animated: true, completion: nil)
@@ -357,29 +360,31 @@ class PersonalViewController: UIViewController {
     
     
     
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
+  
+    
+}
 
-        
-    }
+func isValidEmail(_ email: String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+    return emailPred.evaluate(with: email)
+
     
-    func isPasswordValid(password: String) -> Bool {
-        let passRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passRegEx)
-        print("password \(passwordTest.evaluate(with: password))")
-        return passwordTest.evaluate(with: password)
+}
+
+func isPasswordValid(password: String) -> Bool {
+    let passRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
+    let passwordTest = NSPredicate(format: "SELF MATCHES %@", passRegEx)
+    print("password \(passwordTest.evaluate(with: password))")
+    return passwordTest.evaluate(with: password)
+}
+
+
+func searchForSpecialChar(search: String) -> Bool {
+    let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    if search.rangeOfCharacter(from: characterset.inverted) != nil {
+        print("string contains special characters")
+        return true
     }
-   
-    
-    func searchForSpecialChar(search: String) -> Bool {
-        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
-        if search.rangeOfCharacter(from: characterset.inverted) != nil {
-            print("string contains special characters")
-            return true
-        }
-        return false
-    }
-    
+    return false
 }

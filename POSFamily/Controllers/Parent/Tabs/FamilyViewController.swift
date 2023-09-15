@@ -22,8 +22,16 @@ class FamilyViewController: UIViewController {
         
     }
     
+    @IBAction func settingsButtonPressed(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "FamilySettings") as? AccountSettingsViewController  {
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
     
-
+    
+    @IBAction func notificationButtonPressed(_ sender: Any) {
+    }
+    
 }
 
 extension FamilyViewController :  UITableViewDelegate, UITableViewDataSource  {
